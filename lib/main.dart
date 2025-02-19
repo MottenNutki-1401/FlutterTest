@@ -1,41 +1,20 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'; //flutter material packges (buttons, colors, etc)
 
 void main() {
-  runApp(Duduki());
+  // entry point of the app
+  runApp(Duduki()); //starts the Duduki 'widget' (defined below)
 }
 
 class Duduki extends StatelessWidget {
-  @override
+  //define the main app screen, StatelessWidget (static)
+  @override //means modifying something from parent classhai
   Widget build(BuildContext context) {
-    // Variables
-    var name = 'Voyager I';
-    var year = 1977;
-    var antennaDiameter = 3.7;
-    var flybyObjects = ['Jupiter', 'Saturn', 'Uranus', 'Neptune'];
-    var image = {
-      'tags': ['saturn'],
-      'url':
-          'https://upload.wikimedia.org/wikipedia/commons/c/c7/Voyager_spacecraft_model.png',
-    };
-
+    // build is the function=creates UI
+    // context = app info (screen size, theme, etc.)
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(title: Text("Voyager I Info")),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset('assets/sat.png'), // Display spacecraft image
-              SizedBox(height: 10),
-              Text("Name: $name", style: TextStyle(fontSize: 20)),
-              Text("Launch Year: $year"),
-              Text("Antenna Diameter: ${antennaDiameter}m"),
-              Text(
-                  "Flyby Objects: ${flybyObjects.join(', ')}"), // Convert list to string
-            ],
-          ),
-        ),
-      ),
+      //MaterialApp = root widget
+      home: Scaffold(backgroundColor: Color.fromARGB(255, 248, 162, 162)),
+      //Scaffold= basic layout structure (blank canvas)
     );
   }
 }
